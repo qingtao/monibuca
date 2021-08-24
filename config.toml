@@ -3,19 +3,24 @@ EnableAudio = true
 EnableVideo = true
 # 发布流默认过期时间单位秒
 PublishTimeout = 60
+
 [Summary]
 # 1秒中采样一次
-SampleRate = 1
+SampleRate = 5
+
 [RTMP]
-ListenAddr = ":1935"
+ListenAddr = "127.0.0.1:1935"
+
 [GateWay]
-ListenAddr = ":8080"
-#ListenAddrTLS = ":8082"
+ListenAddr = "127.0.0.1:8080"
+
+#ListenAddrTLS = "127.0.0.1:8082"
 #CertFile = "xxx.cert"
 #KeyFile = "xxx.key"
 [Jessica]
-#ListenAddr = ":8081"
-#ListenAddrTLS = ":8083"
+
+#ListenAddr = "127.0.0.1:8081"
+#ListenAddrTLS = "127.0.0.1:8083"
 #CertFile = "xxx.cert"
 #KeyFile = "xxx.key"
 [LogRotate]
@@ -26,9 +31,11 @@ Size = 0
 Days = 1
 # 按照go layout格式化，默认按照小时
 Formatter = "2006-01-02T15"
+
 [Cluster]
 # 监听端口代表该服务器为源服务器
-ListenAddr = ":2019"
+ListenAddr = "127.0.0.1:2019"
+
 # 源服务器地址，用于向源服务器进行推或拉流
 #OriginServer = ""
 [HLS]
@@ -42,26 +49,32 @@ Fragment = 10
 Window = 2
 # ts文件存放目录，m3u8会存放在上一级
 Path = "resource"
+
 [HDL]
-#ListenAddr = ":2020"
-#ListenAddrTLS = ":2021"
+
+#ListenAddr = "127.0.0.1:2020"
+#ListenAddrTLS = "127.0.0.1:2021"
 #CertFile = "xxx.cert"
 #KeyFile = "xxx.key"
 [TS]
 # ts存放目录
-Path  = "resource"
+Path = "resource"
+
 [Record]
 Path = "resource"
 # 自动录制功能
-AutoRecord  = false
+AutoRecord = false
+
 [RTSP]
 # 端口接收推流
-ListenAddr = ":554"
+ListenAddr = "127.0.0.1:554"
 Reconnect = true
+
 #启动后自动拉流，可以配置多个
 #[RTSP.AutoPullList]
 #"live/rtsp2" = "rtsp://admin:admin@192.168.1.212:554/cam/realmonitor?channel=1&subtype=1"
 [WebRTC]
+
 # 端口范围不配置的话是自动分配
 # PortMin = 30000
 # PortMax = 40000
@@ -73,8 +86,8 @@ Reconnect = true
 Serial = "34020000002000000001"
 Realm = "3402000000"
 Expires = 3600
-ListenAddr = "192.168.1.120:5060"
+ListenAddr = "127.0.0.1:5060"
 # 自动停止发布，当订阅者数量将为0时，自动断开
-AutoUnPublish = false
+AutoUnPublish = true
 # 自动拉流，如果开启，则拿到设备注册信息后，就从设备拉流
-AutoInvite = true
+AutoInvite = false

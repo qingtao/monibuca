@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/Monibuca/engine/v3 v3.3.4
 	github.com/Monibuca/plugin-gateway/v3 v3.0.0-20210822074036-b8c3fa9424cd
-	github.com/Monibuca/plugin-gb28181/v3 v3.0.0-20210822073246-2f7a6e617d01
+	github.com/Monibuca/plugin-gb28181/v3 v3.0.0
 	github.com/Monibuca/plugin-hdl/v3 v3.0.0-20210807135828-9d98f5b8dd6c
 	github.com/Monibuca/plugin-hls/v3 v3.0.0-20210821065544-cb61e2220aac
 	github.com/Monibuca/plugin-jessica/v3 v3.0.0-20210807235919-48ac5fbec646
@@ -20,3 +20,4 @@ require (
 
 // replace github.com/Monibuca/engine/v3 => ../engine
 // replace github.com/Monibuca/plugin-summary => ../plugin-summary
+replace github.com/Monibuca/plugin-gb28181/v3 v3.0.0 => ../plugin-gb28181
